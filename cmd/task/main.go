@@ -5,5 +5,12 @@ import (
 )
 
 func main() {
-	task.RunCLI()
+
+	db, err := task.InitializeDB("tasks.db")
+	if err != nil {
+		panic(err)
+	}
+	defer db.Close()
+
+	task.RunCLI(db)
 }
