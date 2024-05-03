@@ -32,8 +32,12 @@ func initRootCmd(rootCmd *cobra.Command) {
 		fmt.Println("Error inserting task:", err)
 		return
 	}
+
+	// Add subcommands
 	rootCmd.AddCommand(AddCmd)
 	rootCmd.AddCommand(ListCmd)
+	rootCmd.AddCommand(RemoveCmd)
+	rootCmd.AddCommand(EditCmd)
 }
 
 // Execute runs the root command. It is called once in the main function.
