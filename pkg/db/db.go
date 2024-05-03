@@ -1,10 +1,11 @@
-package task
+package db
 
 import (
 	"database/sql"
-
 	_ "github.com/mattn/go-sqlite3"
 )
+
+var DB *sql.DB
 
 func InitializeDB(dbPath string) (*sql.DB, error) {
 	// Open the database file. If it doesn't exist, it will be created.
