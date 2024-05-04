@@ -1,9 +1,10 @@
 package cmd
 
 import (
+	"fmt"
+
 	"github.com/spf13/cobra"
 	"github.com/zrross11/golang-task-manager/pkg/db"
-	"fmt"
 )
 
 // NewRootCmd creates a new root command for taskman. It is called once in the
@@ -11,13 +12,12 @@ import (
 func NewRootCmd() *cobra.Command {
 
 	rootCmd := &cobra.Command{
-		Use:   "taskman",
-		Short: "Task Manager CLI",
-		Long:  "Task Manager CLI.\n\nTaskman is a lightweight CLI to manage tasks.",
-		
+		Use:     "taskman",
+		Short:   "Task Manager CLI",
+		Long:    "Task Manager CLI.\n\nTaskman is a lightweight CLI to manage tasks.",
+		Version: "0.0.1",
 	}
 	rootCmd.CompletionOptions.HiddenDefaultCmd = true
-
 
 	initRootCmd(rootCmd)
 
